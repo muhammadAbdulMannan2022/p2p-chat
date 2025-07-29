@@ -28,18 +28,17 @@ A secure, serverless peer-to-peer (P2P) chat application written in Python. This
 2. Clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/<your-repo>.git
-   cd <your-repo>
+   https://github.com/muhammadAbdulMannan2022/p2p-chat.git
+   cd p2p-chat
    ```
 
-   Replace `<your-username>` and `<your-repo>` with your GitHub username and repository name.
 
 ### Install Dependencies
 
 Install the required Python packages:
 
 ```bash
-pip install cryptography miniupnpc
+pip install -r requirements.txt
 ```
 
 ## Usage
