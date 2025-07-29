@@ -69,7 +69,7 @@ pip install -r requirements.txt
    - Enter a port number (default: `8080`) or press Enter to use the default.
    - The application will:
      - Attempt to forward the port using UPnP.
-     - Display your public IP (e.g., `203.0.113.1`) and port.
+     - Display your public IP (e.g., `203.0.*.*`) and port.
      - Wait for a peer to connect.
    - Share the public IP and port with the peer who will connect to you.
    - Example output:
@@ -78,34 +78,34 @@ pip install -r requirements.txt
      Select option: 1
      Port (default 8080): 8080
      [*] UPnP: Port 8080 forwarded successfully
-     [*] Your public IP: 203.0.113.1
+     [*] Your public IP: 203.0.*.*
      [*] Listening on 0.0.0.0:8080
-     [*] Share your public IP (203.0.113.1) and port 8080 with peer to connect
+     [*] Share your public IP (203.0.*.*) and port 8080 with peer to connect
      [*] Waiting for connection...
      ```
 
 3. **Connect to a Peer** (Option 2):
 
    - Choose option `2` to connect to a listening peer.
-   - Enter the peer’s public IP or hostname (e.g., `203.0.113.1`) and port (e.g., `8080`).
+   - Enter the peer’s public IP or hostname (e.g., `203.0.*.*`) and port (e.g., `8080`).
    - If the connection succeeds, you can start chatting.
    - Example output:
 
      ```
      Select option: 2
-     Enter peer IP or hostname: 203.0.113.1
+     Enter peer IP or hostname: 203.0.*.*
      Enter port (default 8080): 8080
      [*] Received key length: 44 bytes
      [+] Received encryption key from peer
-     [+] Connected to peer 203.0.113.1:8080
+     [+] Connected to peer 203.0.*.*:8080
      [*] Chat started. Type /quit to exit
      ```
 
 4. **Chatting**:
 
    - Type messages and press Enter to send.
-   - Sent messages are prefixed with your local IP (e.g., `[192.168.1.100] hello`).
-   - Received messages are prefixed with the peer’s IP (e.g., `[198.51.100.2] hi`).
+   - Sent messages are prefixed with your local IP (e.g., `[192.168.*.*] hello`).
+   - Received messages are prefixed with the peer’s IP (e.g., `[198.51.*.*] hi`).
    - Use `/quit`, `/exit`, or `/q` to exit the chat.
    - Use `/clear` to clear the screen.
 
@@ -123,7 +123,7 @@ pip install -r requirements.txt
 [*] Chat started. Type /quit to exit
 
 > hello
-[192.168.1.100] hello
+[192.168.100.1] hello
 > 
 [*] Received 64 bytes of encrypted data
 [198.51.100.2] Hi from outside!
@@ -137,14 +137,14 @@ pip install -r requirements.txt
 ```
 [*] Received key length: 44 bytes
 [+] Received encryption key from peer
-[+] Connected to peer 203.0.113.1:8080
+[+] Connected to peer 203.0.*.*:8080
 [*] Chat started. Type /quit to exit
 
 > Hi from outside!
 [192.168.1.101] Hi from outside!
 > 
 [*] Received 64 bytes of encrypted data
-[203.0.113.1] hello
+[203.0.*.*] hello
 > /quit
 [*] Connection closed. No trace left.
 ```
@@ -158,7 +158,7 @@ To use the application over the internet (outside your local network), the liste
 - **How It Works**:
   - When you select the "Listen" option and enter a port (e.g., `8080`), the application uses the `miniupnpc` library to:
     - Discover your router.
-    - Retrieve your public IP (e.g., `203.0.113.1`).
+    - Retrieve your public IP (e.g., `203.0.*.*`).
     - Forward the specified port to your device’s local IP (e.g., `192.168.1.100:8080`).
   - The public IP and port are displayed for you to share with the peer.
 - **Requirements**:
@@ -200,7 +200,7 @@ If UPnP is unavailable or fails, you must manually forward the port on your rout
   ```bash
   curl ifconfig.me
   ```
-- Share this public IP (e.g., `203.0.113.1`) with the peer.
+- Share this public IP (e.g., `203.0.*.*`) with the peer.
 
 #### Configure Port Forwarding
 
